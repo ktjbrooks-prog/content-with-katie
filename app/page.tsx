@@ -1,5 +1,7 @@
 "use client";
+
 import { motion } from "framer-motion";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-pink-50 text-neutral-900 font-serif">
@@ -14,8 +16,12 @@ export default function Home() {
           Content With Katie
         </motion.h1>
 
-        <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8">
-          High-end social media management for brands that want to stand out.
+        <p className="text-lg md:text-xl max-w-2xl mx-auto mb-4">
+          Content That Works While You Work.
+        </p>
+
+        <p className="text-md md:text-lg max-w-2xl mx-auto mb-8 text-neutral-600">
+          Fully Insured and DBS checked.
         </p>
 
         <a href="https://calendly.com/contentwithkatie/30min" target="_blank">
@@ -50,11 +56,24 @@ export default function Home() {
         <h2 className="text-3xl font-semibold mb-10">Pricing</h2>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {["Starter", "Growth", "Premium"].map((plan, i) => (
+          {[
+            {
+              name: "Starter Presence",
+              price: "£150",
+            },
+            {
+              name: "Full Content & Visibility",
+              price: "£260",
+            },
+            {
+              name: "Full Content, Visibility & Growth",
+              price: "£310",
+            },
+          ].map((plan, i) => (
             <div key={i} className="p-6 rounded-2xl shadow">
-              <h3 className="text-xl font-bold mb-2">{plan}</h3>
-              <p className="text-2xl mb-4">£XXX</p>
-              <p>Replace with your package details</p>
+              <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
+              <p className="text-2xl mb-4">{plan.price}</p>
+              <p>Custom tailored to your business needs.</p>
             </div>
           ))}
         </div>
@@ -86,6 +105,8 @@ export default function Home() {
       {/* Contact */}
       <section className="bg-white py-20 text-center">
         <h2 className="text-3xl font-semibold mb-6">Contact Me</h2>
+
+        <p className="mb-4">Email: Hellokatiecontent@gmail.com</p>
 
         <a href="https://calendly.com/contentwithkatie/30min" target="_blank">
           <button className="bg-pink-500 text-white px-6 py-3 rounded-xl">
