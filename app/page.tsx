@@ -55,16 +55,16 @@ export default function Home() {
         </motion.h1>
 
         <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-4 font-medium">
-          Content That works, While You Work
+          Content That Works, While You Work 🫶🏻✨
         </p>
 
         <p className="text-md max-w-2xl mx-auto mb-10 text-neutral-500">
-          Fully Insured and DBS checked
+          Fully Insured and DBS Checked 🩷
         </p>
 
         <a href="https://calendly.com/contentwithkatie/30min" target="_blank">
           <button className="bg-pink-500 hover:bg-pink-600 text-white px-10 py-4 rounded-full text-lg shadow-md">
-            Book a Consultation
+            Book a Consultation 🥰
           </button>
         </a>
       </section>
@@ -72,14 +72,14 @@ export default function Home() {
       {/* Pricing */}
       <section className="bg-white py-24 px-6 text-center">
         <h2 className="text-3xl mb-12" style={{ fontFamily: "Playfair Display, serif" }}>
-          Pricing
+          Pricing ✨
         </h2>
 
         <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
           {[
-            { name: "Starter Presence", price: "£150", desc: "Your Social, But Cuter" },
-            { name: "Full Content & Visibility", price: "£260", desc: "Let's Get You SEEN" },
-            { name: "Full Content, Visibility & Growth", price: "£310", desc: "Main Character Energy Only" },
+            { name: "Starter Presence", price: "£150", desc: "Your Socials, But Cuter 🩷" },
+            { name: "Full Content & Visibility", price: "£260", desc: "Let's Get You SEEN ✨" },
+            { name: "Full Content, Visibility & Growth", price: "£310", desc: "Main Character Energy Only 🫶🏻" },
           ].map((plan, i) => (
             <motion.div
               key={i}
@@ -97,7 +97,7 @@ export default function Home() {
 
         <a href="#enquiry">
           <p className="mt-12 text-pink-600 underline cursor-pointer">
-            NOT WHAT YOU’RE LOOKING FOR?
+            NOT WHAT YOU’RE LOOKING FOR? 🙋🏼‍♀️
           </p>
         </a>
       </section>
@@ -142,7 +142,7 @@ export default function Home() {
       {/* Enquiry */}
       <section id="enquiry" className="py-24 px-6 text-center">
         <h2 className="text-3xl mb-8" style={{ fontFamily: "Playfair Display, serif" }}>
-          Custom Enquiry
+          Custom Enquiry ✨
         </h2>
 
         {!submitted ? (
@@ -175,12 +175,12 @@ export default function Home() {
             />
 
             <button className="bg-pink-500 text-white py-3 rounded-full hover:bg-pink-600">
-              Send Enquiry
+              Send Enquiry 🩷
             </button>
           </form>
         ) : (
           <p className="text-lg text-pink-600">
-            Thank you — your enquiry has been sent 💗
+            Thank you — your enquiry has been sent 🫶🏻
           </p>
         )}
       </section>
@@ -188,15 +188,15 @@ export default function Home() {
       {/* Contact */}
       <section className="bg-white py-20 text-center">
         <h2 className="text-3xl mb-6" style={{ fontFamily: "Playfair Display, serif" }}>
-          Contact Me
+          Contact Me ✨
         </h2>
 
-        <p className="mb-4">Hellokatiecontent@gmail.com</p>
+        <p className="mb-4">Hellokatiecontent@gmail.com 🩷</p>
 
         <div className="flex flex-col gap-4 items-center">
           <a href="https://calendly.com/contentwithkatie/30min" target="_blank">
             <button className="bg-pink-500 text-white px-6 py-3 rounded-full">
-              Book via Calendly
+              Book via Calendly 🥰
             </button>
           </a>
 
@@ -205,14 +205,14 @@ export default function Home() {
             target="_blank"
           >
             <button className="border border-pink-500 text-pink-500 px-6 py-3 rounded-full hover:bg-pink-50">
-              View Facebook
+              View Facebook 🙋🏼‍♀️
             </button>
           </a>
         </div>
       </section>
 
       <footer className="py-8 text-center text-sm text-neutral-500">
-        © {new Date().getFullYear()} Content With Katie
+        © {new Date().getFullYear()} Content With Katie 🩷
       </footer>
     </div>
   );
