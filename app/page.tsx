@@ -96,6 +96,43 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Pricing */}
+      <section className="bg-white py-24 px-6 text-center">
+        <h2 className="text-3xl mb-12" style={{ fontFamily: "Playfair Display, serif" }}>
+          Pricing ✨
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+          {[
+            { name: "Starter Presence", price: "£150", desc: "Your Socials, But Cuter 🩷" },
+            { name: "Full Content & Visibility", price: "£260", desc: "Let's Get You SEEN ✨" },
+            { name: "Full Content, Visibility & Growth", price: "£310", desc: "Main Character Energy Only 🫶🏻" },
+          ].map((plan, i) => (
+            <motion.div
+              key={i}
+              whileHover={{ scale: 1.05 }}
+              className="p-8 rounded-3xl shadow-md bg-[#ffeef3]"
+            >
+              <h3 className="text-xl mb-3">{plan.name}</h3>
+              <p className="text-3xl mb-2">
+                {plan.price} <span className="text-lg">Per Week</span>
+              </p>
+              <p className="text-neutral-600">{plan.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <p className="mt-8 text-pink-500 font-medium">
+          Limited client spaces available each month 🩷
+        </p>
+
+        <a href="#enquiry">
+          <p className="mt-6 text-pink-600 underline cursor-pointer">
+            NOT WHAT YOU’RE LOOKING FOR? 🙋🏼‍♀️
+          </p>
+        </a>
+      </section>
+
       {/* How It Works */}
       <section className="py-24 px-6 text-center bg-[#fff6f9]">
         <h2 className="text-3xl mb-10" style={{ fontFamily: "Playfair Display, serif" }}>
@@ -166,27 +203,9 @@ export default function Home() {
             onSubmit={() => setSubmitted(true)}
             className="max-w-xl mx-auto flex flex-col gap-4"
           >
-            <input
-              name="name"
-              placeholder="Your Name"
-              required
-              className="p-4 border rounded-full"
-            />
-
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              required
-              className="p-4 border rounded-full"
-            />
-
-            <textarea
-              name="message"
-              placeholder="Tell me what you need..."
-              required
-              className="p-4 border rounded-2xl h-32"
-            />
+            <input name="name" placeholder="Your Name" required className="p-4 border rounded-full" />
+            <input type="email" name="email" placeholder="Your Email" required className="p-4 border rounded-full" />
+            <textarea name="message" placeholder="Tell me what you need..." required className="p-4 border rounded-2xl h-32" />
 
             <button className="bg-pink-500 text-white py-3 rounded-full hover:bg-pink-600">
               Send Enquiry 🩷
@@ -214,10 +233,7 @@ export default function Home() {
             </button>
           </a>
 
-          <a
-            href="https://www.facebook.com/share/14ZNSZNuv8D/?mibextid=wwXIfr"
-            target="_blank"
-          >
+          <a href="https://www.facebook.com/share/14ZNSZNuv8D/?mibextid=wwXIfr" target="_blank">
             <button className="border border-pink-500 text-pink-500 px-6 py-3 rounded-full hover:bg-pink-50">
               View Facebook 🙋🏼‍♀️
             </button>
