@@ -35,7 +35,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#ffe4ec] text-neutral-900">
-      
+
       {/* Hero */}
       <section className="text-center py-32 px-6">
         <motion.h1
@@ -58,6 +58,10 @@ export default function Home() {
           Content That Works, While You Work 🫶🏻✨
         </p>
 
+        <p className="text-md max-w-2xl mx-auto mb-6 text-neutral-600">
+          Helping you stay consistent, visible & booked 🩷
+        </p>
+
         <p className="text-md max-w-2xl mx-auto mb-10 text-neutral-500">
           Fully Insured and DBS Checked 🩷
         </p>
@@ -69,37 +73,47 @@ export default function Home() {
         </a>
       </section>
 
-      {/* Pricing */}
-      <section className="bg-white py-24 px-6 text-center">
-        <h2 className="text-3xl mb-12" style={{ fontFamily: "Playfair Display, serif" }}>
-          Pricing ✨
+      {/* Results */}
+      <section className="py-24 px-6 text-center">
+        <h2 className="text-3xl mb-6" style={{ fontFamily: "Playfair Display, serif" }}>
+          Results ✨
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+        <p className="max-w-2xl mx-auto text-neutral-600 mb-10">
+          Helping businesses show up consistently, attract clients, and grow their socials without the stress 🫶🏻
+        </p>
+
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="bg-white p-6 rounded-2xl shadow-sm">
+            <p>📈 Consistent posting</p>
+          </div>
+          <div className="bg-white p-6 rounded-2xl shadow-sm">
+            <p>💬 Increased engagement</p>
+          </div>
+          <div className="bg-white p-6 rounded-2xl shadow-sm">
+            <p>💸 More enquiries</p>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-24 px-6 text-center bg-[#fff6f9]">
+        <h2 className="text-3xl mb-10" style={{ fontFamily: "Playfair Display, serif" }}>
+          How It Works ✨
+        </h2>
+
+        <div className="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {[
-            { name: "Starter Presence", price: "£150", desc: "Your Socials, But Cuter 🩷" },
-            { name: "Full Content & Visibility", price: "£260", desc: "Let's Get You SEEN ✨" },
-            { name: "Full Content, Visibility & Growth", price: "£310", desc: "Main Character Energy Only 🫶🏻" },
-          ].map((plan, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ scale: 1.05 }}
-              className="p-8 rounded-3xl shadow-md bg-[#ffeef3]"
-            >
-              <h3 className="text-xl mb-3">{plan.name}</h3>
-              <p className="text-3xl mb-2">
-                {plan.price} <span className="text-lg">Per Week</span>
-              </p>
-              <p className="text-neutral-600">{plan.desc}</p>
-            </motion.div>
+            "Book a consultation 🩷",
+            "We plan your content together ✨",
+            "I create & manage everything 🫶🏻",
+            "You sit back & watch your socials grow 🥰",
+          ].map((step, i) => (
+            <div key={i} className="p-6 bg-white rounded-2xl shadow-sm">
+              <p className="font-medium">{step}</p>
+            </div>
           ))}
         </div>
-
-        <a href="#enquiry">
-          <p className="mt-12 text-pink-600 underline cursor-pointer">
-            NOT WHAT YOU’RE LOOKING FOR? 🙋🏼‍♀️
-          </p>
-        </a>
       </section>
 
       {/* Testimonials */}
