@@ -2,26 +2,24 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [submitted, setSubmitted] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [current, setCurrent] = useState(0);
 
   const testimonials = [
     {
-      text: "I am dyslexic and explained this to Katie and explained what I struggle with to what I am wanting to create and left it with her and honestly all I can say is what she created was exactly what I wanted! Whether you have the smaller package to the largest package you will not be disappointed and worth every penny you spend! It’s taken the weight and stress off my shoulders!!! Thank you so much Katie 🩷🩷🩷",
+      text: "I am dyslexic and explained this to Katie and honestly what she created was exactly what I wanted! It’s taken the weight and stress off my shoulders!!!",
       author: "Client Review",
     },
     {
-      text: "I found Katie on Facebook back in January and haven't looked back. My business has the complete package and it is THE COMPLETE PACKAGE! Katie provides an amazing service and has pushed the business socials to another level! I'm extremely thankful that I found Katie when I did and am looking forward to our continued success together :)",
+      text: "My business has the complete package! Katie provides an amazing service and has pushed the business socials to another level!",
       author: "Client Review",
     },
     {
-      text: "I’ve been working with Katie for a month now and it’s a relief that I can hand over my social media to someone I can trust. Katie is approachable and really friendly and makes a big effort to engage 💜",
-      author: "Client Review",
-    },
-    {
-      text: "Katie helped me start my Facebook page, created my logo and helped me get my business off the ground socials wise - it helps me reach new customers instead of relying on word of mouth all the time, really appreciate everything she did to kick start my online presence!",
+      text: "It’s a relief that I can hand over my social media to someone I can trust.",
       author: "Client Review",
     },
   ];
@@ -34,167 +32,78 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#ffe4ec] text-neutral-900">
+    <div className="min-h-screen bg-[#ffe4ec] text-neutral-900 pt-24">
 
-      {/* Hero */}
-      <section className="text-center py-32 px-6">
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-5xl md:text-7xl font-bold mb-8 flex flex-wrap justify-center gap-3"
-        >
-          {"CONTENT WITH KATIE".split(" ").map((word, i) => (
-            <span
-              key={i}
-              className="bg-white px-4 py-2 shadow-md rotate-[-2deg]"
-              style={{ fontFamily: "Playfair Display, serif" }}
-            >
-              {word}
-            </span>
-          ))}
+      {/* NAVBAR */}
+      <div className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+        <div className="flex justify-between items-center max-w-6xl mx-auto px-6 py-4">
+
+          <h1 className="font-semibold text-lg">
+            Content With Katie
+          </h1>
+
+          <button 
+            onClick={() => setMenuOpen(!menuOpen)} 
+            className="text-2xl"
+          >
+            ☰
+          </button>
+        </div>
+
+        {menuOpen && (
+          <div className="flex flex-col items-center gap-6 pb-6 bg-white">
+            <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
+            <Link href="/about" onClick={() => setMenuOpen(false)}>About Me</Link>
+            <Link href="/work" onClick={() => setMenuOpen(false)}>My Work</Link>
+            <Link href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+          </div>
+        )}
+      </div>
+
+      {/* HERO */}
+      <section className="text-center py-24 px-6">
+        <motion.h1 className="text-5xl md:text-7xl font-bold mb-6">
+          Content With Katie 🩷
         </motion.h1>
 
-        <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-4 font-medium">
-          Content That Works, While You Work 🫶🏻✨
+        <p className="text-xl mb-4">
+          Content That Works, While You Work ✨
         </p>
 
-        <p className="text-md max-w-2xl mx-auto mb-6 text-neutral-600">
-          Helping you stay consistent, visible & booked 🩷
-        </p>
-
-        <p className="text-md max-w-2xl mx-auto mb-10 text-neutral-500">
-          Fully Insured and DBS Checked 🩷
+        <p className="text-neutral-600 mb-6">
+          Helping busy business owners stay consistent, visible & booked 🫶🏻
         </p>
 
         <a href="https://calendly.com/contentwithkatie/30min" target="_blank">
-          <button className="bg-pink-500 hover:bg-pink-600 text-white px-10 py-4 rounded-full text-lg shadow-md">
+          <button className="bg-pink-500 text-white px-8 py-3 rounded-full">
             Book a Consultation 🥰
           </button>
         </a>
       </section>
 
-      {/* Results */}
-      <section className="py-24 px-6 text-center">
-        <h2 className="text-3xl mb-6" style={{ fontFamily: "Playfair Display, serif" }}>
-          Results ✨
-        </h2>
-
-        <p className="max-w-2xl mx-auto text-neutral-600 mb-10">
-          Helping businesses show up consistently, attract clients, and grow their socials without the stress 🫶🏻
-        </p>
-
+      {/* RESULTS */}
+      <section className="py-16 text-center">
+        <h2 className="text-3xl mb-6">Results ✨</h2>
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <div className="bg-white p-6 rounded-2xl shadow-sm">
-            <p>📈 Consistent posting</p>
-          </div>
-          <div className="bg-white p-6 rounded-2xl shadow-sm">
-            <p>💬 Increased engagement</p>
-          </div>
-          <div className="bg-white p-6 rounded-2xl shadow-sm">
-            <p>💸 More enquiries</p>
-          </div>
+          <div className="bg-white p-6 rounded-2xl shadow-sm">📈 Consistent posting</div>
+          <div className="bg-white p-6 rounded-2xl shadow-sm">💬 Engagement</div>
+          <div className="bg-white p-6 rounded-2xl shadow-sm">💸 More enquiries</div>
         </div>
       </section>
 
-      {/* Pricing */}
-      <section className="bg-white py-24 px-6 text-center">
-        <h2 className="text-3xl mb-12" style={{ fontFamily: "Playfair Display, serif" }}>
-          Pricing ✨
-        </h2>
+      {/* TESTIMONIALS */}
+      <section className="py-16 text-center bg-white">
+        <h2 className="text-3xl mb-6">Client Love</h2>
 
-        <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
-          {[
-            { name: "Starter Presence", price: "£150", desc: "Your Socials, But Cuter 🩷" },
-            { name: "Full Content & Visibility", price: "£260", desc: "Let's Get You SEEN ✨" },
-            { name: "Full Content, Visibility & Growth", price: "£310", desc: "Main Character Energy Only 🫶🏻" },
-          ].map((plan, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ scale: 1.05 }}
-              className="p-8 rounded-3xl shadow-md bg-[#ffeef3]"
-            >
-              <h3 className="text-xl mb-3">{plan.name}</h3>
-              <p className="text-3xl mb-2">
-                {plan.price} <span className="text-lg">Per Week</span>
-              </p>
-              <p className="text-neutral-600">{plan.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-
-        <p className="mt-8 text-pink-500 font-medium">
-          Limited client spaces available each month 🩷
-        </p>
-
-        <a href="#enquiry">
-          <p className="mt-6 text-pink-600 underline cursor-pointer">
-            NOT WHAT YOU’RE LOOKING FOR? 🙋🏼‍♀️
-          </p>
-        </a>
-      </section>
-
-      {/* How It Works */}
-      <section className="py-24 px-6 text-center bg-[#fff6f9]">
-        <h2 className="text-3xl mb-10" style={{ fontFamily: "Playfair Display, serif" }}>
-          How It Works ✨
-        </h2>
-
-        <div className="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          {[
-            "Book a consultation 🩷",
-            "We plan your content together ✨",
-            "I create & manage everything 🫶🏻",
-            "You sit back & watch your socials grow 🥰",
-          ].map((step, i) => (
-            <div key={i} className="p-6 bg-white rounded-2xl shadow-sm">
-              <p className="font-medium">{step}</p>
-            </div>
-          ))}
+        <div className="max-w-xl mx-auto bg-pink-50 p-6 rounded-2xl">
+          <p>{testimonials[current].text}</p>
+          <p className="mt-4 font-semibold">{testimonials[current].author}</p>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-24 px-6 text-center bg-white">
-        <h2 className="text-3xl mb-12" style={{ fontFamily: "Playfair Display, serif" }}>
-          Client Love
-        </h2>
-
-        <div className="max-w-3xl mx-auto">
-          <motion.div
-            key={current}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="bg-[#ffeef3] p-8 rounded-3xl shadow-md"
-          >
-            <p className="text-lg mb-6 text-neutral-700">
-              {testimonials[current].text}
-            </p>
-
-            <p className="font-semibold">{testimonials[current].author}</p>
-
-            <p className="text-pink-500 mt-2">★★★★★</p>
-          </motion.div>
-
-          <div className="flex justify-center gap-2 mt-6">
-            {testimonials.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrent(i)}
-                className={`w-3 h-3 rounded-full ${
-                  current === i ? "bg-pink-500" : "bg-pink-200"
-                }`}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Enquiry */}
-      <section id="enquiry" className="py-24 px-6 text-center">
-        <h2 className="text-3xl mb-8" style={{ fontFamily: "Playfair Display, serif" }}>
-          Custom Enquiry ✨
-        </h2>
+      {/* ENQUIRY */}
+      <section className="py-16 text-center">
+        <h2 className="text-3xl mb-6">Enquiry ✨</h2>
 
         {!submitted ? (
           <form
@@ -203,45 +112,21 @@ export default function Home() {
             onSubmit={() => setSubmitted(true)}
             className="max-w-xl mx-auto flex flex-col gap-4"
           >
-            <input name="name" placeholder="Your Name" required className="p-4 border rounded-full" />
-            <input type="email" name="email" placeholder="Your Email" required className="p-4 border rounded-full" />
-            <textarea name="message" placeholder="Tell me what you need..." required className="p-4 border rounded-2xl h-32" />
+            <input name="name" placeholder="Your Name" required className="p-3 border rounded-full" />
+            <input type="email" name="email" placeholder="Your Email" required className="p-3 border rounded-full" />
+            <textarea name="message" placeholder="Your Message" required className="p-3 border rounded-xl" />
 
-            <button className="bg-pink-500 text-white py-3 rounded-full hover:bg-pink-600">
+            <button className="bg-pink-500 text-white py-3 rounded-full">
               Send Enquiry 🩷
             </button>
           </form>
         ) : (
-          <p className="text-lg text-pink-600">
-            Thank you — your enquiry has been sent 🫶🏻
-          </p>
+          <p className="text-pink-600">Thank you — message sent 🫶🏻</p>
         )}
       </section>
 
-      {/* Contact */}
-      <section className="bg-white py-20 text-center">
-        <h2 className="text-3xl mb-6" style={{ fontFamily: "Playfair Display, serif" }}>
-          Contact Me ✨
-        </h2>
-
-        <p className="mb-4">Hellokatiecontent@gmail.com 🩷</p>
-
-        <div className="flex flex-col gap-4 items-center">
-          <a href="https://calendly.com/contentwithkatie/30min" target="_blank">
-            <button className="bg-pink-500 text-white px-6 py-3 rounded-full">
-              Book via Calendly 🥰
-            </button>
-          </a>
-
-          <a href="https://www.facebook.com/share/14ZNSZNuv8D/?mibextid=wwXIfr" target="_blank">
-            <button className="border border-pink-500 text-pink-500 px-6 py-3 rounded-full hover:bg-pink-50">
-              View Facebook 🙋🏼‍♀️
-            </button>
-          </a>
-        </div>
-      </section>
-
-      <footer className="py-8 text-center text-sm text-neutral-500">
+      {/* FOOTER */}
+      <footer className="py-6 text-center text-sm text-neutral-500">
         © {new Date().getFullYear()} Content With Katie 🩷
       </footer>
     </div>
