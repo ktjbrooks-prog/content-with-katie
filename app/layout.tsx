@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: 'Content With Katie',
-  description: 'Content That Works, While You Work',
+  title: "Social Media Manager UK | Content With Katie",
+  description: "Helping small businesses grow their socials with content that works while you work. Social media management, content creation & strategy.",
 };
 
 export default function RootLayout({
