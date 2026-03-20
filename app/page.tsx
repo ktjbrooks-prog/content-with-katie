@@ -5,22 +5,22 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function Home() {
-  const [submitted, setSubmitted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const [current, setCurrent] = useState(0);
 
   const testimonials = [
     {
       text: "I am dyslexic and explained this to Katie and honestly what she created was exactly what I wanted! It’s taken the weight and stress off my shoulders!!!",
-      author: "Client Review",
+      author: "Small Business Owner",
     },
     {
-      text: "My business has the complete package! Katie provides an amazing service and has pushed the business socials to another level!",
-      author: "Client Review",
+      text: "Katie has pushed the business socials to another level! I’m so glad I found her!",
+      author: "Beauty Business Owner",
     },
     {
-      text: "It’s a relief that I can hand over my social media to someone I can trust.",
-      author: "Client Review",
+      text: "It’s such a relief knowing my socials are in safe hands 💗",
+      author: "Local Business Owner",
     },
   ];
 
@@ -32,15 +32,12 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#ffe4ec] text-neutral-900 pt-24">
+    <div className="min-h-screen bg-[#ffdbe6] text-neutral-900 pt-24">
 
       {/* NAVBAR */}
-      <div className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+      <div className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-lg shadow-sm z-50">
         <div className="flex justify-between items-center max-w-6xl mx-auto px-6 py-4">
-
-          <h1 className="font-semibold text-lg">
-            Content With Katie
-          </h1>
+          <h1 className="font-semibold text-lg">Content With Katie 🩷</h1>
 
           <button 
             onClick={() => setMenuOpen(!menuOpen)} 
@@ -50,28 +47,30 @@ export default function Home() {
           </button>
         </div>
 
-        {menuOpen && (
+        <div className={`transition-all duration-300 ${menuOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"} overflow-hidden`}>
           <div className="flex flex-col items-center gap-6 pb-6 bg-white">
-            <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
-            <Link href="/about" onClick={() => setMenuOpen(false)}>About Me</Link>
-            <Link href="/work" onClick={() => setMenuOpen(false)}>My Work</Link>
-            <Link href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+            <Link href="/" onClick={() => setMenuOpen(false)}>Home 🫶🏻</Link>
+            <Link href="/about" onClick={() => setMenuOpen(false)}>About Me ✨</Link>
+            <Link href="/work" onClick={() => setMenuOpen(false)}>My Work 💗</Link>
+            <Link href="/contact" onClick={() => setMenuOpen(false)}>Contact 🥰</Link>
           </div>
-        )}
+        </div>
       </div>
 
       {/* HERO */}
       <section className="text-center py-24 px-6">
-        <motion.h1 className="text-5xl md:text-7xl font-bold mb-6">
-          Content With Katie 🩷
+        <motion.h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-widest">
+          <span className="bg-white px-3 py-1 inline-block rotate-[-2deg] shadow">CONTENT</span>{" "}
+          <span className="bg-white px-3 py-1 inline-block rotate-[2deg] shadow">WITH</span>{" "}
+          <span className="bg-white px-3 py-1 inline-block rotate-[-1deg] shadow">KATIE</span>
         </motion.h1>
 
         <p className="text-xl mb-4">
-          Content That Works, While You Work ✨
+          Content That Works, While You Work 🫶🏻✨
         </p>
 
-        <p className="text-neutral-600 mb-6">
-          Helping busy business owners stay consistent, visible & booked 🫶🏻
+        <p className="text-neutral-700 mb-6">
+          Fully Insured and DBS Checked 🩷
         </p>
 
         <a href="https://calendly.com/contentwithkatie/30min" target="_blank">
@@ -81,13 +80,25 @@ export default function Home() {
         </a>
       </section>
 
-      {/* RESULTS */}
+      {/* PRICING */}
       <section className="py-16 text-center">
-        <h2 className="text-3xl mb-6">Results ✨</h2>
+        <h2 className="text-3xl mb-10">Packages ✨</h2>
+
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <div className="bg-white p-6 rounded-2xl shadow-sm">📈 Consistent posting</div>
-          <div className="bg-white p-6 rounded-2xl shadow-sm">💬 Engagement</div>
-          <div className="bg-white p-6 rounded-2xl shadow-sm">💸 More enquiries</div>
+          <div className="bg-white p-6 rounded-2xl shadow">
+            <h3 className="text-xl mb-2">Your Socials, But Cuter 🩷</h3>
+            <p className="text-2xl">£150 / Week</p>
+          </div>
+
+          <div className="bg-white p-6 rounded-2xl shadow">
+            <h3 className="text-xl mb-2">Let’s Get You SEEN ✨</h3>
+            <p className="text-2xl">£260 / Week</p>
+          </div>
+
+          <div className="bg-white p-6 rounded-2xl shadow">
+            <h3 className="text-xl mb-2">Main Character Energy Only 💅</h3>
+            <p className="text-2xl">£310 / Week</p>
+          </div>
         </div>
       </section>
 
@@ -125,10 +136,6 @@ export default function Home() {
         )}
       </section>
 
-      {/* FOOTER */}
-      <footer className="py-6 text-center text-sm text-neutral-500">
-        © {new Date().getFullYear()} Content With Katie 🩷
-      </footer>
     </div>
   );
 }
