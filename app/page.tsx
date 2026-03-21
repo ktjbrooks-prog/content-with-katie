@@ -133,7 +133,7 @@ export default function Home() {
 
         {!submitted ? (
           <form
-            action="https://formspree.io/f/xreyjdoo"
+            action="https://formspree.io/f/mkoqavpq"
             method="POST"
             onSubmit={() => setSubmitted(true)}
             className="max-w-xl mx-auto flex flex-col gap-4"
