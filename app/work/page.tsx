@@ -12,17 +12,17 @@ export default function Work() {
       <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
 
         <img 
-          src="/work1.jpg" 
+          src="/work1.jpeg" 
           className="rounded-2xl shadow-md hover:scale-105 transition"
         />
 
         <img 
-          src="/work2.jpg" 
+          src="/work2.jpeg" 
           className="rounded-2xl shadow-md hover:scale-105 transition"
         />
 
         <img 
-          src="/work3.jpg" 
+          src="/work3.jpeg" 
           className="rounded-2xl shadow-md hover:scale-105 transition"
         />
 
