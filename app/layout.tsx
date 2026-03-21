@@ -13,7 +13,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className="bg-[#ffdbe6] text-neutral-900">
+      <body className="bg-[#ffdbe6] text-neutral-900 bg-[linear-gradient(135deg,rgba(255,255,255,0.3)_1px,transparent_1px)] bg-[size:40px_40px]">
 
         {/* NAVBAR */}
         <div className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-lg shadow-sm z-50">
@@ -23,7 +23,7 @@ export default function RootLayout({
             <img 
               src="/logo.png" 
               alt="Content With Katie Logo" 
-              className="h-10 object-contain"
+              className="h-14 object-contain"
             />
 
             {/* BURGER */}
