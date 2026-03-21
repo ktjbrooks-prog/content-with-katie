@@ -1,13 +1,22 @@
 export default function Contact() {
   return (
-    <div className="min-h-screen p-10 text-center">
-      <h1 className="text-3xl mb-6">Contact 🩷</h1>
+    <div className="min-h-screen bg-[#ffdbe6] text-center p-10">
 
-      <p>Email: Hellokatiecontent@gmail.com</p>
+      <h1 className="text-4xl mb-6">Let’s Work Together 🩷</h1>
 
-      <p className="mt-4">
-        Or head back to the homepage to send an enquiry ✨
+      <p className="max-w-xl mx-auto mb-6">
+        Ready to take your socials to the next level? I’d love to hear from you ✨
       </p>
+
+      <div className="bg-white p-6 rounded-2xl shadow max-w-md mx-auto">
+        <p className="mb-2 font-semibold">Email</p>
+        <p className="mb-4">Hellokatiecontent@gmail.com</p>
+
+        <p className="text-sm text-neutral-500">
+          Or head back to the homepage and send an enquiry form 🫶🏻
+        </p>
+      </div>
+
     </div>
   );
 }
