@@ -30,7 +30,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="bg-transparent text-neutral-900">
 
       {/* HERO */}
       <section className="text-center py-24 px-6">
@@ -49,14 +49,14 @@ export default function Home() {
         </p>
 
         <a href="https://calendly.com/contentwithkatie/30min" target="_blank">
-          <button className="bg-pink-500 text-white px-8 py-3 rounded-full hover:scale-105 transition">
+          <button className="bg-pink-400 hover:bg-pink-500 text-white px-8 py-3 rounded-full shadow-md hover:shadow-xl transition">
             Book a Consultation 🥰
           </button>
         </a>
       </section>
 
-      {/* WHY PEOPLE CHOOSE YOU */}
-      <section className="text-center py-16 px-6">
+      {/* WHY */}
+      <section className="text-center py-16 px-6 bg-[#fff0f5]">
         <h2 className="text-3xl mb-6">Struggling to keep up with your socials? 🥲</h2>
 
         <p className="max-w-xl mx-auto text-neutral-700 text-lg">
@@ -65,39 +65,39 @@ export default function Home() {
         </p>
       </section>
 
-      {/* VALUE SECTION */}
-      <section className="py-16 text-center">
+      {/* VALUE */}
+      <section className="py-16 text-center bg-white/70 backdrop-blur-sm">
         <h2 className="text-3xl mb-10">What You Get ✨</h2>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <div className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+          <div className="bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-md hover:shadow-xl transition">
             ✨ Consistent Content
           </div>
-          <div className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+          <div className="bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-md hover:shadow-xl transition">
             💬 More Engagement
           </div>
-          <div className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+          <div className="bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-md hover:shadow-xl transition">
             💸 More Enquiries
           </div>
         </div>
       </section>
 
       {/* PRICING */}
-      <section className="py-16 text-center">
+      <section className="py-16 text-center bg-[#fff0f5]">
         <h2 className="text-3xl mb-10">Packages ✨</h2>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <div className="bg-white p-6 rounded-2xl shadow">
+          <div className="bg-white/80 p-6 rounded-2xl shadow-md">
             <h3 className="text-xl mb-2">Your Socials, But Cuter 🩷</h3>
             <p className="text-2xl">£150 / Week</p>
           </div>
 
-          <div className="bg-white p-6 rounded-2xl shadow">
+          <div className="bg-white/80 p-6 rounded-2xl shadow-md">
             <h3 className="text-xl mb-2">Let’s Get You SEEN ✨</h3>
             <p className="text-2xl">£260 / Week</p>
           </div>
 
-          <div className="bg-white p-6 rounded-2xl shadow">
+          <div className="bg-white/80 p-6 rounded-2xl shadow-md">
             <h3 className="text-xl mb-2">Main Character Energy Only 💅</h3>
             <p className="text-2xl">£310 / Week</p>
           </div>
@@ -115,20 +115,20 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 text-center">
+      <section className="py-16 text-center bg-[#fff0f5]">
         <h2 className="text-3xl mb-4">Ready to take the stress off your plate? 🩷</h2>
 
         <p className="mb-6">Limited spaces available each month ✨</p>
 
         <a href="https://calendly.com/contentwithkatie/30min" target="_blank">
-          <button className="bg-pink-500 text-white px-8 py-3 rounded-full hover:scale-105 transition">
+          <button className="bg-pink-400 hover:bg-pink-500 text-white px-8 py-3 rounded-full shadow-md hover:shadow-xl transition">
             Book Your Slot 🥰
           </button>
         </a>
       </section>
 
       {/* ENQUIRY */}
-      <section className="py-16 text-center">
+      <section className="py-16 text-center bg-white/70 backdrop-blur-sm">
         <h2 className="text-3xl mb-6">Enquiry ✨</h2>
 
         {!submitted ? (
@@ -142,12 +142,12 @@ export default function Home() {
             <input type="email" name="email" placeholder="Your Email" required className="p-3 border rounded-full" />
             <textarea name="message" placeholder="Your Message" required className="p-3 border rounded-xl" />
 
-            <button className="bg-pink-500 text-white py-3 rounded-full">
+            <button className="bg-pink-400 text-white py-3 rounded-full">
               Send Enquiry 🩷
             </button>
           </form>
         ) : (
-          <p className="text-pink-600">Thank you — message sent 🫶🏻</p>
+          <p className="text-pink-500">Thank you — message sent 🫶🏻</p>
         )}
       </section>
 
